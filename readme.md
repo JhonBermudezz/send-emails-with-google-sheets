@@ -73,11 +73,12 @@ Crea un archivo llamado credenciales.env en el mismo directorio que tu script y 
 
 plaintext
 Copiar código
-
+```bash
 GOOGLE_SHEETS_CREDS=path/to/your/credentials.json
 SPREADSHEET_URL=https://docs.google.com/spreadsheets/d/YOUR_SPREADSHEET_ID/edit
 EMAIL_ORIGEN=your_email@example.com
 EMAIL_PASSWORD=your_email_password
+```
 Reemplaza path/to/your/credentials.json con la ruta a tu archivo JSON, YOUR_SPREADSHEET_ID con el ID de tu hoja de cálculo, y proporciona tu correo electrónico y contraseña.
 
 Nota: Para una mayor seguridad, considera utilizar una contraseña de aplicación si tu cuenta de Google tiene habilitada la verificación en dos pasos.
@@ -89,7 +90,9 @@ Una vez que hayas configurado todo, puedes ejecutar el script de la siguiente ma
 ## bash
 
 Copiar código
+```bash
 python script_main.py
+```
 
 ## Descripción del Script
 
