@@ -7,7 +7,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 import logging
 
-# Configuración del logging
 logging.basicConfig(level=logging.INFO)
 
 # Cargar las variables de entorno desde el archivo .env
@@ -53,16 +52,14 @@ with smtplib.SMTP('smtp.gmail.com', 587) as server:
         
         if estado != 'Enviado':
             email_destino = fila.get('Email')
-            posicion = fila.get('Posicion')
-            mejoras = fila.get('Mejoras')
             
             # Validar campos
-            if not email_destino or not posicion or not mejoras:
+            if not email_destino:
                 logging.warning(f"Fila {i}: Falta información necesaria. Correo no enviado.")
                 continue
-            
-            asunto = "Mejoras recomendadas para tu sitio web"
-            cuerpo = f"Hola,\n\nTu página está en la posición {posicion}.\nVemos que puedes aplicar las siguientes mejoras:\n{mejoras}\n\nContáctanos para más detalles.\nSaludos."
+    
+            asunto = "Asunto"
+            cuerpo = f"Cuerpo del correo"
             
             mensaje = MIMEMultipart()
             mensaje['From'] = email_origen
